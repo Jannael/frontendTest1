@@ -27,6 +27,7 @@ Analyze the current git status and staged changes. Create semantic, atomic commi
 5. After all commits, run `git status` to confirm everything is committed
 
 Important:
+
 - Never commit secrets, credentials, or .env files
 - Keep commit messages under 72 characters
 - Use present tense ("add feature" not "added feature")

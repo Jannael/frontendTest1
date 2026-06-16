@@ -19,6 +19,7 @@ Run `lint` then `fmt:check` after changes. Pre-commit hook runs `lint-staged` (e
 - Prettier: no semicolons, single quotes, tabs, printWidth 150. Plugins: `prettier-plugin-astro`, `prettier-plugin-tailwindcss`.
 - `bunfig.toml` enforces exact dependency versions and minimum release age (86400s).
 - Node >= 22.12.0
+- **Component filenames:** kebab-case (e.g., `search-input.tsx`, `orders-list.tsx`).
 
 ## Fonts
 
