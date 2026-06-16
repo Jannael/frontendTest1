@@ -33,7 +33,7 @@
 - [ ] Código Modular: Estructura del código clara, reutilizable y organizada.
 - [ ] Pixel Perfect: Precisión en la maquetación respecto al diseño.
 - [ ] Cross-Browser: Compatibilidad en los principales navegadores.
-- [ ] Conexión API REST: Integración funcional con los endpoints proporcionados.
+- [x] Conexión API REST: Integración funcional con los endpoints proporcionados.
 - [ ] Responsive Design: Adaptabilidad a diferentes tamaños de pantalla.
 
 ## Especificos de la prueba
@@ -47,7 +47,7 @@
 
 ![Instrucciones 1](./assets/Instrucciones-1.png)
 
-- [ ] Filtrar ordenes por el numero de la orden
+- [x] Filtrar ordenes por el numero de la orden
 - [ ] El tiempo de inicio de navegar debera compararse con el **star_date** de la orden con el tiempo actual. Una vez terminado el tiempo, se habilita el boton y en consola debera mandar un mensaje **navegar**
 - [ ] Boton para llevar a la interfaz de los detalles de la orden
 
