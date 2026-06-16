@@ -20,7 +20,7 @@
 
 - [x] Astro + tailwind + react
 - [x] Linter + formatter con pre-commit hooks
-- [ ] sitemap
+- [x] sitemap
 - [ ] webmanifest
 - [x] Inter font viene en el figma
 - [x] Avenir (fuente principal)
