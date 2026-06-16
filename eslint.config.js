@@ -24,14 +24,14 @@ export default [
 		},
 		settings: {
 			react: {
-				version: 'detect',
+				version: '19.0',
 			},
 		},
 		rules: {
-			...react.configs.recommended.rules,
-			...reactHooks.configs.recommended.rules,
 			'react/react-in-jsx-scope': 'off',
 			'react/prop-types': 'off',
+			'react/display-name': 'off',
+			...reactHooks.configs.recommended.rules,
 		},
 	},
 	{ files: ['*.ts', '*.tsx', '*.astro'] },
