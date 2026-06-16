@@ -1,18 +1,15 @@
 // @ts-check
 import { defineConfig } from 'astro/config'
-
 import tailwindcss from '@tailwindcss/vite'
-
 import react from '@astrojs/react'
-
-import sitemap from '@astrojs/sitemap';
+import sitemap from '@astrojs/sitemap'
 
 // https://astro.build/config
 export default defineConfig({
-    site: 'https://frontend-test1-sigma.vercel.app/',
-    vite: {
-        plugins: [tailwindcss()],
-    },
+	site: 'https://frontend-test1-sigma.vercel.app/',
+	vite: {
+		plugins: [tailwindcss()],
+	},
 
-    integrations: [react(), sitemap()],
+	integrations: [react(), sitemap()],
 })
