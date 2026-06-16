@@ -1,0 +1,18 @@
+---
+interface Props {
+	title: string
+	returnUrl: string
+}
+
+const { title, returnUrl } = Astro.props
+---
+
+<nav class="mt-[65px] flex h-[60px] items-center justify-between px-[46px] md:h-[72px] lg:h-[80px]">
+	<a href={returnUrl} class="flex items-center">
+		<img src="/return.svg" alt="Volver" class="h-[19px] w-[10px] md:h-[24px] md:w-[13px] lg:h-[28px] lg:w-[15px]" />
+	</a>
+
+	<h1 class="font-avenir text-txt text-[20px] font-[800]">{title}</h1>
+
+	<img src="/Notification.svg" alt="Notificaciones" class="h-[26px] w-[24px]" />
+</nav>
