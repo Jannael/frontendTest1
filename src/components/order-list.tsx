@@ -1,7 +1,18 @@
+import type { Order } from '@/api/get-all-orders'
 import { useOrdersStore } from '@/stores/orders'
+import { useEffect } from 'react'
 
-export function OrdersList() {
+interface SearchOrdersProps {
+	orders: Order[]
+}
+
+export default function OrdersList({ orders }: SearchOrdersProps) {
 	const { filteredOrders } = useOrdersStore()
+	const setAllOrders = useOrdersStore((state) => state.setAllOrders)
+
+	useEffect(() => {
+		setAllOrders(orders)
+	}, [orders, setAllOrders])
 
 	if (filteredOrders.length === 0) {
 		return (

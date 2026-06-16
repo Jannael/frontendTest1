@@ -1,6 +1,8 @@
 import { useOrdersStore } from '@/stores/orders'
 
-export function SearchInput() {
+// NOTE: The filtered in the client side, because the api doesn't support search query params, and we don't want to fetch all orders every time the user types something in the search input, so we fetch all orders once and then filter them in the client side, also i was told the backend stuff was not important.
+
+export default function SearchInput() {
 	const { searchQuery, setSearchQuery } = useOrdersStore()
 
 	return (
