@@ -28,6 +28,15 @@ Two fonts configured for pixel-perfect Figma implementation:
 - **Inter Variable** (`@fontsource-variable/inter`) — imported in `src/layouts/layout.astro`. Type declaration in `src/env.d.ts`.
 - Tailwind classes: `font-avenir` and `font-inter` (defined via `@theme` in `global.css`).
 
+## Theme
+
+Tailwind v4 custom tokens defined via `@theme` in `src/styles/global.css`:
+
+- **Fonts:** `font-avenir`, `font-inter`
+- **Colors:** `primary` (#ffEE00), `txt` (#EDEDED), `bg` (#080C0F), `accent` (#0C7DED), `txt-secondary` (#808183), `txt-tertiary` (#4C4D4E), `disabled` (#D9D9D9), `margin-black` (#000000), `margin-white` (#BABABA), `margin-gray` (#848484)
+
+Use as standard Tailwind utilities: `bg-primary`, `text-txt`, `border-accent`, etc.
+
 ## Project Context
 
 This is a front-end evaluation test. Implementation must be **pixel perfect** from the [Figma design](https://www.figma.com/design/a3ZLOVSXnQliLKNloQoXN1/Prueba-Devs). Data comes from mock Postman API endpoints (see README.md for URLs).
