@@ -2,7 +2,7 @@
 import Layout from '@/layouts/layout.astro'
 import Header from '@/components/header.astro'
 import Navbar from '@/components/navbar.astro'
-import Search from '@/components/search.astro'
+import Search from '@/components/search.tsx'
 import { getAllOrders } from '@/api/get-all-orders'
 
 const orders = await getAllOrders()
@@ -17,9 +17,5 @@ const navbarItems = [
 <Layout title="Home">
 	<Header title="Cargo Orders" returnUrl="/" />
 	<Navbar items={navbarItems} />
-	<Search />
-	<script define:vars={{ orders }}>
-		import { useOrdersStore } from '@/stores/orders'
-		useOrdersStore.getState().setAllOrders(orders)
-	</script>
+	<Search {orders} client:load />
 </Layout>
