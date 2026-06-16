@@ -1,7 +1,5 @@
 ---
 import '@/styles/global.css'
-import '@fontsource-variable/jost'
-import jostLatinWoff2 from '@fontsource-variable/jost/files/jost-latin-wght-normal.woff2?url'
 
 interface Props {
 	title?: string
@@ -80,7 +78,6 @@ const structuredData = {
 		<link rel="apple-touch-icon" href="/apple-touch-icon-white.webp" media="(prefers-color-scheme: dark)" />
 		<link rel="apple-touch-icon" href="/apple-touch-icon-white.webp" />
 		<link rel="manifest" href="/site.webmanifest" />
-		<link rel="preload" href={jostLatinWoff2} as="font" type="font/woff2" crossorigin />
 		<meta name="theme-color" content="#0a0a0a" />
 		<meta name="robots" content="index, follow" />
 		<title>{title}</title>
@@ -105,7 +102,7 @@ const structuredData = {
 		<meta name="google-site-verification" content="4M9mf3OjR8y4FUs1VCx0uDx6Ey-9cDriEF5LveM0dBY" />
 		<script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
 	</head>
-	<body class="max-w-9xl m-auto min-h-screen bg-[#0a0a0a] text-zinc-300">
+	<body class="max-w-9xl font-avenir">
 		<main>
 			<slot />
 		</main>
@@ -113,7 +110,7 @@ const structuredData = {
 
 	<style is:global>
 		html {
-			font-family: 'Jost Variable', sans-serif;
+			font-family: 'Avenir', sans-serif;
 		}
 	</style>
 </html>
