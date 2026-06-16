@@ -9,12 +9,11 @@
 
    [Figma - Prueba Front-End](https://www.figma.com/design/a3ZLOVSXnQliLKNloQoXN1/Prueba-Devs?node-id=0-1&t=X0XF6OQZqiBiTN8Z-1)
 
-2. **Peticiones API**  
+2. **Peticiones API**
    - **Pedidos próximos:**  
      `https://129bc152-6319-4e38-b755-534a4ee46195.mock.pstmn.io/orders/upcoming`
    - **Todos los pedidos:**  
      `https://129bc152-6319-4e38-b755-534a4ee46195.mock.pstmn.io/orders`
-
 
 ## TODOS
 
@@ -24,10 +23,12 @@
 - [ ] webmanifest
 - [x] Inter font viene en el figma
 - [x] Avenir (fuente principal)
+- [ ] **og.png** (1200x630) — actualmente usando favicon.webp como placeholder
 - [ ] Tests
 - [ ] Deploy
 
-## Criterios de evaluacion 
+## Criterios de evaluacion
+
 - [ ] Layout: Implementación visual según el diseño.
 - [ ] Código Modular: Estructura del código clara, reutilizable y organizada.
 - [ ] Pixel Perfect: Precisión en la maquetación respecto al diseño.
@@ -36,12 +37,14 @@
 - [ ] Responsive Design: Adaptabilidad a diferentes tamaños de pantalla.
 
 ## Especificos de la prueba
+
 - [x] Nuevo repositorio
 - [x] Framework de preferencia
 - [ ] Si los datos de algún pedido no contienen una imagen, deberás mostrar un **avatar predeterminado**.
 - [x] En caso de no contar con la tipografía requerida, se permitirá el uso de **Open Sans** como alternativa (usando las dos tipografias del figma).
 
 ### Imagen 1 instrucciones
+
 ![Instrucciones 1](./assets/Instrucciones-1.png)
 
 - [ ] Filtrar ordenes por el numero de la orden
@@ -49,6 +52,7 @@
 - [ ] Boton para llevar a la interfaz de los detalles de la orden
 
 ### Imagen 2 instrucciones
+
 ![Instrucciones 2](./assets/Instrucciones-2.png)
 
 - [ ] Boton que muestra datos correspondientes al PickUp o DropOff (creo que son dos campos diferentes con la misma informacion **Por revisar**)
