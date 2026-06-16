@@ -1,4 +1,5 @@
 import type { Order } from '@/api/get-all-orders'
+import OrderComponent from '@/components/order'
 import { useOrdersStore } from '@/stores/orders'
 import { useEffect } from 'react'
 
@@ -23,12 +24,10 @@ export default function OrdersList({ orders }: SearchOrdersProps) {
 	}
 
 	return (
-		<div className="flex flex-col gap-4 px-4 py-3">
+		<ul className="mt-[40px] flex flex-col gap-4 px-4 py-3">
 			{filteredOrders.map((order) => (
-				<div key={order.id} className="bg-bg-secondary rounded-lg p-4">
-					<p className="text-txt font-avenir text-sm">Ref: {order.referenceNumber}</p>
-				</div>
+				<OrderComponent order={order} key={order.id} />
 			))}
-		</div>
+		</ul>
 	)
 }

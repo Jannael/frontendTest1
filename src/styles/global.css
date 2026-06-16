@@ -35,7 +35,7 @@
 @font-face {
 	font-family: 'Avenir';
 	src: url('/fonts/Avenir/Avenir Black/Avenir Black.ttf') format('truetype');
-	font-weight: 900;
+	font-weight: 00;
 	font-style: normal;
 	font-display: swap;
 }
@@ -54,4 +54,5 @@
 	--color-margin-white: #bababa;
 	--color-margin-gray: #848484;
 	--color-margin-bottom: #2c2c2c;
+	--color-reference: #969798;
 }
