@@ -9,7 +9,13 @@ export default function SearchInput() {
 		<div className="mt-[40px] h-[50px] w-full px-[46px]">
 			<div className="border-margin-bottom flex h-full items-center justify-between border-b-2">
 				<img src="/Magnifier.svg" alt="Search" className="size-5" />
-				<input type="text" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} placeholder="Search..." className="size-full" />
+				<input
+					type="text"
+					value={searchQuery}
+					onChange={(e) => setSearchQuery(e.target.value)}
+					placeholder="Search..."
+					className="text-txt size-full pl-3 focus:outline-none"
+				/>
 			</div>
 		</div>
 	)
