@@ -1,8 +1,16 @@
 ---
 import Layout from '@/layouts/layout.astro'
 import Header from '@/components/header.astro'
+import Navbar from '@/components/navbar.astro'
+
+const navbarItems = [
+	{ text: 'Upcoming', isActive: true, href: '/' },
+	{ text: 'Completed', isActive: false, href: '/' },
+	{ text: 'Past', isActive: false, href: '/' },
+]
 ---
 
 <Layout title="Home">
 	<Header title="Cargo Orders" returnUrl="/" />
+	<Navbar items={navbarItems} />
 </Layout>
