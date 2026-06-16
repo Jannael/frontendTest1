@@ -56,3 +56,24 @@
 	--color-margin-bottom: #2c2c2c;
 	--color-reference: #969798;
 }
+
+.conic-border {
+	position: relative;
+}
+
+.conic-border::before {
+	content: '';
+	position: absolute;
+	inset: -1px;
+	width: calc(100% + 2px);
+	height: calc(100% + 2px);
+	border-radius: inherit;
+	background: conic-gradient(
+		var(--color-margin-black),
+		var(--color-margin-white),
+		var(--color-margin-gray),
+		var(--color-margin-bottom),
+		var(--color-margin-black)
+	);
+	z-index: -1;
+}
