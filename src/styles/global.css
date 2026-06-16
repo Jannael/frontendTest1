@@ -64,16 +64,16 @@
 .conic-border::before {
 	content: '';
 	position: absolute;
-	inset: -1px;
-	width: calc(100% + 2px);
-	height: calc(100% + 2px);
+	inset: 0;
+	width: calc(100% + 1px);
+	height: calc(100% + 1px);
 	border-radius: inherit;
 	background: conic-gradient(
-		var(--color-margin-black),
 		var(--color-margin-white),
 		var(--color-margin-gray),
-		var(--color-margin-bottom),
-		var(--color-margin-black)
+		var(--color-margin-gray),
+		var(--color-margin-white),
+		var(--color-margin-white)
 	);
 	z-index: -1;
 }
