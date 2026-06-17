@@ -5,7 +5,7 @@ import react from 'eslint-plugin-react'
 import reactHooks from 'eslint-plugin-react-hooks'
 
 export default [
-	{ ignores: ['**/dist/**', '**/node_modules/**', '**/build/**', '**/.astro/**'] },
+	{ ignores: ['**/dist/**', '**/node_modules/**', '**/build/**', '**/.astro/**', '**/.vercel/**'] },
 	js.configs.recommended,
 	...typescriptEslint.configs.recommended,
 	...eslintPluginAstro.configs.recommended,
