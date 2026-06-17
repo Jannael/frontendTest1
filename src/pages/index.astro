@@ -5,8 +5,9 @@ import Navbar from '@/components/navbar.astro'
 import Search from '@/components/search-input.tsx'
 import OrderList from '@/components/order-list.tsx'
 import { getAllOrders } from '@/api/get-all-orders'
+import type { Order } from '@/api/get-all-orders'
 
-let orders = []
+let orders: Order[] = []
 try {
 	orders = await getAllOrders()
 } catch (error) {
