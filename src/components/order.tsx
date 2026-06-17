@@ -29,15 +29,19 @@ export default function Order({ order }: { order: Order }) {
 					</div>
 				</header>
 
-				<div className="bg-bg flex flex-grow items-center justify-center rounded-b-[20px] p-4">
+				<div className="bg-bg flex flex-grow items-center justify-center rounded-b-[20px] p-4 px-[20px]">
 					<div className="flex w-full items-center">
-						<div className="flex items-center gap-2 pr-[20px]">
+						<div className="flex size-10 items-center gap-2">
 							<img src="/truck-white-stroke.svg" alt="Truck" className="h-[17.6px] w-[26.5px]" />
 						</div>
-						<div className="flex flex-col gap-[2px]">
+						<div className="flex flex-grow flex-col gap-[2px]">
 							<span className="text-txt-tertiary text-[8px] font-semibold">PICKUP</span>
 							<span className="text-txt text-[15.5px] font-semibold">New York</span>
 							<span className="text-reference text-[12.5px] font-medium">25 Mortada street, Gainalkes..</span>
+						</div>
+						<div className="flex flex-col justify-end gap-[2px] text-right">
+							<span className="text-txt-tertiary text-[10.5px] font-semibold">01/04/23</span>
+							<span className="text-txt text-[12px] font-medium">10:45</span>
 						</div>
 					</div>
 				</div>
