@@ -19,6 +19,8 @@ export default function OrderTrack({ orders }: OrderTrackProps) {
 	if (!order) return null
 
 	const currentStep = order.status
+	// if status is less than 3, disable the track button
+	const disableTrackButton = order.status < 3
 
 	return (
 		<section className="mb-[100px] flex w-full flex-col items-center justify-center px-[38px]">
@@ -35,7 +37,15 @@ export default function OrderTrack({ orders }: OrderTrackProps) {
 					})}
 				</ol>
 
-				<button className="text-bg bg-primary h-[75px] w-full rounded-b-[19px] text-[20px] font-extrabold">Track Order</button>
+				<button
+					disabled={disableTrackButton}
+					className={`${disableTrackButton ? 'bg-bg text-txt-tertiary border-margin-gray border-t' : 'bg-primary text-bg'} h-[75px] w-full rounded-b-[19px] text-[20px] font-extrabold`}
+					onClick={() => {
+						console.log('**Track order**')
+					}}
+				>
+					Track Order
+				</button>
 			</div>
 		</section>
 	)
