@@ -1,6 +1,6 @@
 import type { Order } from '@/api/get-all-orders'
 import { useOrder } from '@/hooks/useOrder'
-import DetailsRouteItem from './details-route-item'
+import DetailsRouteItem from '@/components/details-route-item'
 
 interface OrderDetailsProps {
 	orders: Order[]
