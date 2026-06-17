@@ -52,14 +52,14 @@
 ![Instrucciones 1](./assets/Instrucciones-1.png)
 
 - [x] Filtrar ordenes por el numero de la orden
-- [ ] El tiempo de inicio de navegar debera compararse con el **star_date** de la orden con el tiempo actual. Una vez terminado el tiempo, se habilita el boton y en consola debera mandar un mensaje **navegar**
-- [ ] Boton para llevar a la interfaz de los detalles de la orden
+- [x] El tiempo de inicio de navegar debera compararse con el **star_date** de la orden con el tiempo actual. Una vez terminado el tiempo, se habilita el boton y en consola debera mandar un mensaje **navegar**
+- [x] Boton para llevar a la interfaz de los detalles de la orden
 
 ### Imagen 2 instrucciones
 
 ![Instrucciones 2](./assets/Instrucciones-2.png)
 
-- [ ] Boton que muestra datos correspondientes al PickUp o DropOff (creo que son dos campos diferentes con la misma informacion **Por revisar**)
-- [ ] Estados de check de acuerdo a los estados en los que se encuentra
-- [ ] boton que solo se activara en caso de que el status se encuentre del numero 3 en adelante, mostrar en consola **track order**
+- [ ] Boton que muestra datos correspondientes al PickUp o DropOff
+- [x] Estados de check de acuerdo a los estados en los que se encuentra
+- [x] boton que solo se activara en caso de que el status se encuentre del numero 3 en adelante, mostrar en consola **track order**
 - [ ] Panel expandible para mostrar el resto de la informacion (PickUp Data)
