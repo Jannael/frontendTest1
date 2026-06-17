@@ -27,6 +27,8 @@
 - [ ] Tests
 - [ ] Deploy
 - [x] Conic gradient
+- [ ] component for pickup and droppoff **order.tsx**
+- [ ] component for pickup and droppoff **order-details.tsx**
 
 ## Criterios de evaluacion
 
