@@ -13,7 +13,6 @@ const { title = 'Prueba Front-End — Evaluación', description = 'Implementaci�
 const site = Astro.site ?? new URL('https://example.com')
 const canonicalUrl = new URL(Astro.url.pathname, site).toString()
 const homeUrl = new URL('/', site).toString()
-// TODO: Agregar og.png (1200x630) y actualizar esta referencia
 const ogImageUrl = new URL('/favicon.webp', site).toString()
 const ogImageAlt = 'Prueba Front-End'
 const organizationId = `${homeUrl}#organization`
