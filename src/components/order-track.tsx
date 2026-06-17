@@ -23,7 +23,7 @@ export default function OrderTrack({ orders }: OrderTrackProps) {
 	const disableTrackButton = order.status < 3
 
 	return (
-		<section className="mb-[100px] flex w-full flex-col items-center justify-center px-[38px]">
+		<section className="mb-[35px] flex w-full flex-col items-center justify-center px-[38px]">
 			{/* i am always using the default because images are blocked from AWS */}
 			<div className="conic-border bg-bg relative mt-[100px] flex w-full flex-col items-center justify-center rounded-[20px] pt-[70px]">
 				<img src="/default-profile.png" className="absolute top-0 left-1/2 size-[90px] size-fit -translate-x-1/2 -translate-y-1/2 transform" />
