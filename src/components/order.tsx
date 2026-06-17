@@ -1,5 +1,7 @@
 import type { Order } from '@/api/get-all-orders'
 import OrderStatus from './order-status'
+import { formatDate } from '@/utils/format-date'
+import { formatTime } from '@/utils/fromat-time'
 
 const statusMap: Record<number, { label: string; color: string }> = {
 	1: { label: 'Pending', color: 'bg-txt-secondary' },
@@ -7,22 +9,6 @@ const statusMap: Record<number, { label: string; color: string }> = {
 	3: { label: 'In Transit', color: 'bg-primary' },
 	4: { label: 'Delivered', color: 'bg-green-500' },
 	5: { label: 'Cancelled', color: 'bg-red-500' },
-}
-
-function formatDate(timestamp: number): string {
-	return new Date(timestamp * 1000).toLocaleDateString('en-US', {
-		day: '2-digit',
-		month: '2-digit',
-		year: '2-digit',
-	})
-}
-
-function formatTime(timestamp: number): string {
-	return new Date(timestamp * 1000).toLocaleTimeString('en-US', {
-		hour: '2-digit',
-		minute: '2-digit',
-		hour12: false,
-	})
 }
 
 export default function Order({ order }: { order: Order }) {
