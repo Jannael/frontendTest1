@@ -1,10 +1,13 @@
 import type { Order } from '@/api/get-all-orders'
+import { useOrder } from '@/hooks/useOrder'
 
 interface OrderTrackProps {
-	order: Order | null
+	orders: Order[]
 }
 
-export default function OrderTrack({ order }: OrderTrackProps) {
+export default function OrderTrack({ orders }: OrderTrackProps) {
+	const { order } = useOrder({ orders })
+
 	if (!order) return null
 
 	return (

@@ -4,6 +4,7 @@ import Header from '@/components/header.astro'
 import OrderDetails from '@/components/order-details.tsx'
 import { getAllOrders } from '@/api/get-all-orders'
 import type { Order } from '@/api/get-all-orders'
+import OrderTrack from '@/components/order-track.tsx'
 
 let orders: Order[] = []
 try {
@@ -16,4 +17,5 @@ try {
 <Layout title="Order Details">
 	<Header title="Order Details" returnUrl="/" />
 	<OrderDetails orders={orders} client:only="react" />
+	<OrderTrack orders={orders} client:only="react" />
 </Layout>

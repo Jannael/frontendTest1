@@ -1,30 +1,17 @@
 import { statusMap } from '@/constants/status-map'
 import type { Order } from '@/api/get-all-orders'
-import { useMemo } from 'react'
+import { useOrder } from '@/hooks/useOrder'
 
 interface OrderDetailsProps {
 	orders: Order[]
 }
 
 export default function OrderDetails({ orders }: OrderDetailsProps) {
-	const orderId = typeof window !== 'undefined' ? new URLSearchParams(window.location.search).get('order') : null
-
-	const order = useMemo(() => {
-		if (!orderId || orders.length === 0) return null
-		return orders.find((o) => o.id === orderId) || null
-	}, [orderId, orders])
+	const { order } = useOrder({ orders })
 
 	const pickupAddress = order?.destinations[0]?.address || ''
 	const status = statusMap[order?.status ?? 1] || statusMap[1]
 	const dropoffAddress = order?.destinations[order?.destinations.length - 1]?.address || ''
-
-	if (!orderId) {
-		return (
-			<div className="flex flex-col items-center justify-center p-8">
-				<p className="text-txt-secondary">No order ID provided</p>
-			</div>
-		)
-	}
 
 	if (orders.length === 0) {
 		return (
