@@ -49,7 +49,7 @@ export default function Order({ order }: { order: Order }) {
 					</div>
 				</header>
 
-				<div className="bg-bg flex w-full flex-grow flex-col items-center justify-center p-4 px-[20px]">
+				<div className="bg-bg before:bg- relative flex w-full flex-grow flex-col items-center justify-center p-4 px-[20px] before:absolute before:left-8 before:h-1/5 before:w-[1px] before:bg-gradient-to-b before:from-[#D9D9D9] before:to-[#0F1315]">
 					<div className="flex w-full items-center">
 						<div className="flex size-20 flex-grow items-center gap-2">
 							<img src="/truck-white-stroke.svg" alt="Truck" className="h-[17.6px] w-[26.5px]" />
