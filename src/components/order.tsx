@@ -81,9 +81,16 @@ export default function Order({ order }: { order: Order }) {
 					</div>
 				</div>
 
-				<footer className="bg-bg h-[45px] w-full rounded-br-[16px] rounded-bl-[19px]">
+				<footer className="bg-bg flex h-[45px] w-full items-center justify-between">
 					{/* <OrderStatus startDate={order.startDate} /> the time that comes from the order says 10000 years that{s why i commented it, but it works fine it{s just that also i don{t have the exact styles to show the hour }}} */}
 					<OrderStatus startDate={0} />
+					<a
+						href={`/details?order=${order.id}`}
+						className="bg-primary flex h-full items-center gap-2 rounded-tl-[30px] rounded-br-[16px] rounded-bl-[30px] px-[20px]"
+					>
+						<span className="text-bg font-inter text-[12.2px] font-semibold">Resume</span>
+						<img src="/eye.svg" alt="View" className="h-[16px] w-[21px]" />
+					</a>
 				</footer>
 			</article>
 		</li>

@@ -52,7 +52,7 @@ export default function OrderStatus({ startDate }: OrderStatusProps) {
 	return (
 		<button
 			onClick={handleClick}
-			className="bg-primary h-full rounded-tr-[20px] rounded-br-[30px] rounded-bl-[19px] pr-[22px] pl-[50px] text-[13.3px] font-semibold"
+			className="bg-primary text-bg font-inter h-full rounded-tr-[20px] rounded-br-[30px] rounded-bl-[19px] pr-[22px] pl-[50px] text-[13.3px] font-semibold"
 		>
 			Its time for pickup
 		</button>
