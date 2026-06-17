@@ -1,4 +1,4 @@
-import { api } from './api.config'
+import { api } from '@/api/api.config'
 
 export interface NextOrder {
 	id: string
