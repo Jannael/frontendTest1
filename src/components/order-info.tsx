@@ -23,32 +23,31 @@ export default function OrderInfo({ orders }: { orders: Order[] }) {
 		: ''
 
 	return (
-		<section className="m-[34px] flex w-auto flex-col items-start justify-center rounded-[20px] p-[24px]">
-			<button type="button" onClick={() => setIsOpen(!isOpen)} className="border-margin-gray flex w-full items-center justify-between border-b pb-4">
-				<h2 className="text-txt text-[20px] font-extrabold">{title}</h2>
-				<svg
-					className={`text-primary h-4 w-4 transition-transform ${isOpen ? '' : 'rotate-180'}`}
-					fill="none"
-					stroke="currentColor"
-					viewBox="0 0 24 24"
+		<section className="m-[34px] flex w-auto flex-col items-start justify-center rounded-[20px]">
+			<div className="flex h-[72px] w-full items-center justify-center rounded-[20px] bg-gradient-to-b from-[#3a3a3a] to-[#1a1a1a] p-[1px]">
+				<button
+					type="button"
+					onClick={() => setIsOpen(!isOpen)}
+					className="bg-bg flex h-full w-full items-center justify-between rounded-[20px] px-[22px]"
 				>
-					<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 15l7-7 7 7" />
-				</svg>
-			</button>
+					<h2 className="text-txt font-inter text-[15.2px] font-semibold">{title}</h2>
+					<img src="/drop-menu-icon.svg" className={`text-primary h-[14px] w-[9px] transition-transform ${isOpen ? '' : 'rotate-180'}`} />
+				</button>
+			</div>
 
 			{isOpen && (
-				<div className="mt-4 flex w-full flex-col gap-4">
-					<p className="text-txt text-[16px] font-semibold">{destination.address}</p>
+				<div className="mt-4 flex w-full flex-col gap-4 px-4">
+					<p className="text-txt text-[15.3px] font-extrabold">{destination.address}</p>
 
 					{date && time && (
-						<p className="text-txt text-[15px] font-medium">
+						<p className="text-txt text-[15px] font-extrabold">
 							{date} • {time}
 						</p>
 					)}
 
-					{destination.contactInfo.telephone && <p className="text-txt text-[15px] font-medium">{destination.contactInfo.telephone}</p>}
+					{destination.contactInfo.telephone && <p className="text-txt text-[16px] font-extrabold">{destination.contactInfo.telephone}</p>}
 
-					{destination.contactInfo.email && <p className="text-txt text-[15px] font-medium">{destination.contactInfo.email}</p>}
+					{destination.contactInfo.email && <p className="text-txt text-[15px] font-extrabold">{destination.contactInfo.email}</p>}
 				</div>
 			)}
 		</section>
