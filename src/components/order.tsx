@@ -31,7 +31,7 @@ export default function Order({ order }: { order: Order }) {
 	const dropoffAddress = order.destinations[order.destinations.length - 1]?.address || ''
 
 	return (
-		<li key={order.id} className="bg-bg-secondary bg-bg w-full rounded-lg p-4 px-[20px]">
+		<li key={order.id} className="bg-bg-secondary bg-bg w-full rounded-lg px-[20px]">
 			<header className="mb-[16px]">
 				<span className="text-reference font-medium">Order</span>
 				{order.orderNumber && <span className="font-inter text-txt ml-2 text-[17.3px] font-semibold">#{order.orderNumber}</span>}
