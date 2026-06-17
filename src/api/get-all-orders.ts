@@ -196,7 +196,17 @@ function mapOrder(raw: RawOrder): Order {
 	}
 }
 
+const CACHE_TTL = 5 * 60 * 1000 // 5 minutes
+let ordersCache: { data: Order[]; timestamp: number } | null = null
+
 export async function getAllOrders(): Promise<Order[]> {
+	const now = Date.now()
+	if (ordersCache && now - ordersCache.timestamp < CACHE_TTL) {
+		return ordersCache.data
+	}
+
 	const response = await api<ApiResponse>({ endpoint: '/orders' })
-	return [mapOrder(response.result)]
+	const orders = [mapOrder(response.result)]
+	ordersCache = { data: orders, timestamp: now }
+	return orders
 }
