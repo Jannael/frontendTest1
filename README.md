@@ -29,6 +29,7 @@
 - [x] Conic gradient
 - [ ] component for pickup and droppoff **order.tsx**
 - [ ] component for pickup and droppoff **order-details.tsx**
+- [x] SSR por que la API bloquea al cliente por CORS
 
 ## Criterios de evaluacion
 

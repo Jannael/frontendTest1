@@ -1,2 +1,5 @@
 public/fonts/
 .agents/
+.vercel/
+dist/
+node_modules/
