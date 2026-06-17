@@ -26,6 +26,7 @@
 - [ ] **og.png** (1200x630) — actualmente usando favicon.webp como placeholder
 - [ ] Tests
 - [ ] Deploy
+- [x] Conic gradient
 
 ## Criterios de evaluacion
 
