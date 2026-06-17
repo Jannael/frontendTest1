@@ -20,25 +20,24 @@
 - [x] Astro + tailwind + react
 - [x] Linter + formatter con pre-commit hooks
 - [x] sitemap
-- [ ] webmanifest
+- [x] webmanifest
 - [x] Inter font viene en el figma
 - [x] Avenir (fuente principal)
-- [ ] **og.png** (1200x630) — actualmente usando favicon.webp como placeholder
 - [ ] Tests
 - [x] Deploy
 - [x] Conic gradient
-- [ ] component for pickup and droppoff **order.tsx**
-- [ ] component for pickup and droppoff **order-details.tsx**
+- [x] component for pickup and droppoff **order.tsx**
+- [x] component for pickup and droppoff **order-details.tsx**
 - [x] SSR por que la API bloquea al cliente por CORS
 
 ## Criterios de evaluacion
 
 - [x] Layout: Implementación visual según el diseño.
-- [ ] Código Modular: Estructura del código clara, reutilizable y organizada.
+- [x] Código Modular: Estructura del código clara, reutilizable y organizada.
 - [x] Pixel Perfect: Precisión en la maquetación respecto al diseño.
 - [x] Cross-Browser: Compatibilidad en los principales navegadores.
 - [x] Conexión API REST: Integración funcional con los endpoints proporcionados.
-- [ ] Responsive Design: Adaptabilidad a diferentes tamaños de pantalla.
+- [x] Responsive Design: Adaptabilidad a diferentes tamaños de pantalla.
 
 ## Especificos de la prueba
 
