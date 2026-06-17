@@ -6,7 +6,12 @@ import Search from '@/components/search-input.tsx'
 import OrderList from '@/components/order-list.tsx'
 import { getAllOrders } from '@/api/get-all-orders'
 
-const orders = await getAllOrders()
+let orders = []
+try {
+	orders = await getAllOrders()
+} catch (error) {
+	console.error('Failed to fetch orders:', error)
+}
 
 const navbarItems = [
 	{ text: 'Upcoming', isActive: true, href: '/' },

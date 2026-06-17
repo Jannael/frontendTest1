@@ -1,28 +1,43 @@
-import { getAllOrders, type Order } from '@/api/get-all-orders'
 import { statusMap } from '@/constants/status-map'
-import { useEffect, useState } from 'react'
+import type { Order } from '@/api/get-all-orders'
+import { useMemo } from 'react'
 
-export default function OrderDetails() {
-	const [order, setOrder] = useState<Order | null>(null)
-	const params = new URLSearchParams(window.location.search)
+interface OrderDetailsProps {
+	orders: Order[]
+}
+
+export default function OrderDetails({ orders }: OrderDetailsProps) {
+	const orderId = typeof window !== 'undefined' ? new URLSearchParams(window.location.search).get('order') : null
+
+	const order = useMemo(() => {
+		if (!orderId || orders.length === 0) return null
+		return orders.find((o) => o.id === orderId) || null
+	}, [orderId, orders])
+
 	const pickupAddress = order?.destinations[0]?.address || ''
 	const status = statusMap[order?.status ?? 1] || statusMap[1]
 	const dropoffAddress = order?.destinations[order?.destinations.length - 1]?.address || ''
 
-	useEffect(() => {
-		const fetchOrders = async () => {
-			const orders = await getAllOrders()
-			const orderId = params.get('order')
-			const foundOrder = orders.find((o) => o.id === orderId)
-			setOrder(foundOrder || null)
-		}
-		fetchOrders()
-	})
+	if (!orderId) {
+		return (
+			<div className="flex flex-col items-center justify-center p-8">
+				<p className="text-txt-secondary">No order ID provided</p>
+			</div>
+		)
+	}
+
+	if (orders.length === 0) {
+		return (
+			<div className="flex flex-col items-center justify-center p-8">
+				<p className="text-txt-secondary">Loading...</p>
+			</div>
+		)
+	}
 
 	if (!order) {
 		return (
 			<div className="flex flex-col items-center justify-center p-8">
-				<p className="text-txt-secondary">Loading...</p>
+				<p className="text-txt-secondary">Order not found</p>
 			</div>
 		)
 	}

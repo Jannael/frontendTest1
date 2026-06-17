@@ -2,9 +2,17 @@
 import Layout from '@/layouts/layout.astro'
 import Header from '@/components/header.astro'
 import OrderDetails from '@/components/order-details.tsx'
+import { getAllOrders } from '@/api/get-all-orders'
+
+let orders = []
+try {
+	orders = await getAllOrders()
+} catch (error) {
+	console.error('Failed to fetch orders:', error)
+}
 ---
 
 <Layout title="Order Details">
 	<Header title="Order Details" returnUrl="/" />
-	<OrderDetails client:only="react" />
+	<OrderDetails orders={orders} client:only="react" />
 </Layout>
