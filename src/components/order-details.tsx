@@ -31,6 +31,11 @@ export default function OrderDetails() {
 	return (
 		<div className="bg-bg conic-border mt-[20px] ml-[34px] flex w-full items-start justify-start rounded-[20px]">
 			<div className="py-[24px] pl-[42px]">
+				<header className="mb-[22px] flex flex-col">
+					<span className="text-txt font-inter text-[13px] font-semibold"> Reference: #{order.referenceNumber}</span>
+					<span className="text-txt font-inter text-[17.5px] font-semibold"> Order: #{order.orderNumber}</span>
+				</header>
+
 				<div className="flex w-full items-center">
 					<div className="bg-primary outline-primary mr-[20px] flex size-[32px] flex-grow items-center justify-center gap-2 rounded-full outline outline-offset-[4px]">
 						<img src="/truck-black-stroke.svg" alt="Truck" className="h-[17.6px] w-[26.5px]" />
