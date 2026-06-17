@@ -23,7 +23,7 @@
 - [x] webmanifest
 - [x] Inter font viene en el figma
 - [x] Avenir (fuente principal)
-- [ ] Tests
+- [x] Tests
 - [x] Deploy
 - [x] Conic gradient
 - [x] component for pickup and droppoff **order.tsx**
