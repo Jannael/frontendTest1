@@ -25,7 +25,7 @@
 - [x] Avenir (fuente principal)
 - [ ] **og.png** (1200x630) — actualmente usando favicon.webp como placeholder
 - [ ] Tests
-- [ ] Deploy
+- [x] Deploy
 - [x] Conic gradient
 - [ ] component for pickup and droppoff **order.tsx**
 - [ ] component for pickup and droppoff **order-details.tsx**
@@ -33,10 +33,10 @@
 
 ## Criterios de evaluacion
 
-- [ ] Layout: Implementación visual según el diseño.
+- [x] Layout: Implementación visual según el diseño.
 - [ ] Código Modular: Estructura del código clara, reutilizable y organizada.
-- [ ] Pixel Perfect: Precisión en la maquetación respecto al diseño.
-- [ ] Cross-Browser: Compatibilidad en los principales navegadores.
+- [x] Pixel Perfect: Precisión en la maquetación respecto al diseño.
+- [x] Cross-Browser: Compatibilidad en los principales navegadores.
 - [x] Conexión API REST: Integración funcional con los endpoints proporcionados.
 - [ ] Responsive Design: Adaptabilidad a diferentes tamaños de pantalla.
 
@@ -44,7 +44,7 @@
 
 - [x] Nuevo repositorio
 - [x] Framework de preferencia
-- [ ] Si los datos de algún pedido no contienen una imagen, deberás mostrar un **avatar predeterminado**.
+- [x] Si los datos de algún pedido no contienen una imagen, deberás mostrar un **avatar predeterminado**.
 - [x] En caso de no contar con la tipografía requerida, se permitirá el uso de **Open Sans** como alternativa (usando las dos tipografias del figma).
 
 ### Imagen 1 instrucciones
@@ -59,7 +59,7 @@
 
 ![Instrucciones 2](./assets/Instrucciones-2.png)
 
-- [ ] Boton que muestra datos correspondientes al PickUp o DropOff
+- [x] Boton que muestra datos correspondientes al PickUp o DropOff
 - [x] Estados de check de acuerdo a los estados en los que se encuentra
 - [x] boton que solo se activara en caso de que el status se encuentre del numero 3 en adelante, mostrar en consola **track order**
-- [ ] Panel expandible para mostrar el resto de la informacion (PickUp Data)
+- [x] Panel expandible para mostrar el resto de la informacion (PickUp Data)
