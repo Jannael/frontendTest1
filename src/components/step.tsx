@@ -10,7 +10,7 @@ export default function Step({
 	stepIndex?: number
 }) {
 	return (
-		<li className="relative flex items-start gap-4">
+		<li className="relative flex items-center gap-4">
 			{isCompleted ? (
 				<span className="bg-primary flex size-[28px] items-center justify-center rounded-full">
 					<img src="/check.svg" className="h-[6.6px] w-[10.1px]" />
