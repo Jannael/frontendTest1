@@ -53,6 +53,7 @@
 	--color-margin-black: #000000;
 	--color-margin-white: #bababa;
 	--color-margin-gray: #848484;
+	--color-border-gray: #606364;
 	--color-margin-bottom: #2c2c2c;
 	--color-reference: #969798;
 }
@@ -64,7 +65,7 @@
 .conic-border::before {
 	content: '';
 	position: absolute;
-	inset: 0;
+	inset: -1;
 	width: calc(100% + 1px);
 	height: calc(100% + 1px);
 	border-radius: inherit;

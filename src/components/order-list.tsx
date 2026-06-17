@@ -24,7 +24,7 @@ export default function OrdersList({ orders }: SearchOrdersProps) {
 	}
 
 	return (
-		<ul className="mt-[40px] flex flex-col gap-4 px-4 py-3">
+		<ul className="mt-[40px] flex flex-col items-center gap-4 px-4 py-3">
 			{filteredOrders.map((order) => (
 				<OrderComponent order={order} key={order.id} />
 			))}
