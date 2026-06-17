@@ -18,13 +18,13 @@ export default function Order({ order }: { order: Order }) {
 				{order.orderNumber && <span className="font-inter text-txt ml-2 text-[17.3px] font-semibold">#{order.orderNumber}</span>}
 			</header>
 			<article className="conic-border bg-bg z-1 flex h-[290px] w-[350px] flex-col rounded-[20px]">
-				<header className="bg-bg border-boder-gray flex w-full items-center justify-between rounded-t-[20px] border-b px-[20px] py-[15px]">
+				<header className="bg-bg border-border-gray flex w-full items-center justify-between rounded-t-[20px] border-b px-[20px] py-[15px]">
 					<div className="flex items-center gap-2">
 						<img src="/FCL.svg" alt="FCL" className="h-[15px] w-[27px]" />
 						<span className="text-txt text-[15.5px] font-extrabold">FCL</span>
 					</div>
-					<div className="flex items-center gap-2 text-[10.4px]">
-						<span className={`${status.color} h-[10.3px] w-[10.3px] rounded-full`} />
+					<div className="flex items-center gap-2 text-[10px]">
+						<span className={`${status.color} h-[10px] w-[10px] rounded-full`} />
 						<span className={`text-txt`}>{status.label}</span>
 					</div>
 				</header>
