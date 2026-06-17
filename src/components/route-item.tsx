@@ -13,8 +13,8 @@ interface RouteItemProps {
 export default function RouteItem({ label, icon, iconAlt, title, address, date }: RouteItemProps) {
 	return (
 		<div className="flex w-full items-center">
-			<div className="flex size-20 flex-grow items-center gap-2 lg:size-5">
-				<img src={icon} alt={iconAlt} className="h-[17.6px] w-[26.5px]" />
+			<div className="flex size-20 flex-grow items-center gap-2 lg:w-10 lg:flex-grow-0">
+				<img src={icon} alt={iconAlt} className="h-[17.6px] w-[26.5px] lg:h-[20px] lg:w-[30px]" />
 			</div>
 			<div className="flex min-w-0 flex-grow flex-col gap-[2px] px-3">
 				<span className="text-txt-tertiary text-[8px] font-semibold">{label}</span>

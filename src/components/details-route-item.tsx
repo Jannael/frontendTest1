@@ -32,7 +32,7 @@ export default function DetailsRouteItem({ label, order, address }: DetailsRoute
 					<span className="border-margin-gray size-[26px] rounded-full border"></span>
 				</div>
 			)}
-			<div className="flex max-w-[215px] min-w-0 flex-grow flex-col gap-[2px] px-3">
+			<div className="flex max-w-[215px] min-w-0 flex-grow flex-col gap-[2px] px-3 lg:w-full lg:max-w-none">
 				<span className="text-txt-tertiary text-[8px] font-semibold">{label}</span>
 				<span className="text-txt text-[15.5px] font-semibold">{title}</span>
 				<span className="text-reference w-full truncate text-[12.5px] font-medium">{address}</span>
