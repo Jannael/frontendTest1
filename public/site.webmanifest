@@ -1,0 +1,27 @@
+{
+	"name": "Prueba Front-End",
+	"short_name": "Prueba FE",
+	"description": "Implementación de interfaces según diseño Figma con integración API REST.",
+	"start_url": "/",
+	"display": "standalone",
+	"orientation": "portrait",
+	"background_color": "#080C0F",
+	"theme_color": "#ffEE00",
+	"icons": [
+		{
+			"src": "/favicon.webp",
+			"sizes": "any",
+			"type": "image/webp",
+			"purpose": "any"
+		},
+		{
+			"src": "/favicon.webp",
+			"sizes": "any",
+			"type": "image/webp",
+			"purpose": "maskable"
+		}
+	],
+	"lang": "en-US",
+	"scope": "/",
+	"categories": ["productivity", "business"]
+}
