@@ -9,5 +9,8 @@ interface ActiveSectionState {
 
 export const useActiveSectionStore = create<ActiveSectionState>((set) => ({
 	activeSection: 'PICKUP',
-	setActiveSection: (section) => set({ activeSection: section }),
+	setActiveSection: (section) => {
+		set({ activeSection: section })
+		console.log('Active section set to:', section)
+	},
 }))
