@@ -1,7 +1,6 @@
 import type { Order } from '@/api/get-all-orders'
 import OrderStatus from './order-status'
-import { formatDate } from '@/utils/format-date'
-import { formatTime } from '@/utils/fromat-time'
+import RouteItem from './route-item'
 import { statusMap } from '@/constants/status-map'
 
 export default function Order({ order }: { order: Order }) {
@@ -29,35 +28,22 @@ export default function Order({ order }: { order: Order }) {
 				</header>
 
 				<div className="bg-bg relative flex w-full flex-grow flex-col items-center justify-center p-4 px-[20px] before:absolute before:left-8 before:h-1/5 before:w-[1px] before:bg-gradient-to-b before:from-[#D9D9D9] before:to-[#0F1315]">
-					<div className="flex w-full items-center">
-						<div className="flex size-20 flex-grow items-center gap-2">
-							<img src="/truck-white-stroke.svg" alt="Truck" className="h-[17.6px] w-[26.5px]" />
-						</div>
-						<div className="flex min-w-0 flex-grow flex-col gap-[2px] px-3">
-							<span className="text-txt-tertiary text-[8px] font-semibold">PICKUP</span>
-							<span className="text-txt text-[15.5px] font-semibold">{order.route.pickup}</span>
-							<span className="text-reference w-full truncate text-[12.5px] font-medium">{pickupAddress}</span>
-						</div>
-						<div className="flex flex-grow flex-col justify-end gap-[2px] pl-10 text-right">
-							<span className="text-txt-tertiary text-[10.5px] font-semibold">{formatDate(order.route.startDate)}</span>
-							<span className="text-txt text-[12px] font-medium">{formatTime(order.route.startDate)}</span>
-						</div>
-					</div>
-
-					<div className="flex w-full items-center">
-						<div className="flex size-20 flex-grow items-center gap-2 lg:size-5">
-							<img src="/location.svg" alt="Location" className="h-[17.6px] w-[26.5px]" />
-						</div>
-						<div className="flex min-w-0 flex-grow flex-col gap-[2px] px-3">
-							<span className="text-txt-tertiary text-[8px] font-semibold">DROPOFF</span>
-							<span className="text-txt text-[15.5px] font-semibold">{order.route.dropoff}</span>
-							<span className="text-reference w-full truncate text-[12.5px] font-medium">{dropoffAddress}</span>
-						</div>
-						<div className="flex flex-grow flex-col justify-end gap-[2px] pl-10 text-right">
-							<span className="text-txt-tertiary text-[10.5px] font-semibold">{formatDate(order.route.endDate)}</span>
-							<span className="text-txt text-[12px] font-medium">{formatTime(order.route.endDate)}</span>
-						</div>
-					</div>
+					<RouteItem
+						label="PICKUP"
+						icon="/truck-white-stroke.svg"
+						iconAlt="Truck"
+						title={order.route.pickup}
+						address={pickupAddress}
+						date={order.route.startDate}
+					/>
+					<RouteItem
+						label="DROPOFF"
+						icon="/location.svg"
+						iconAlt="Location"
+						title={order.route.dropoff}
+						address={dropoffAddress}
+						date={order.route.endDate}
+					/>
 				</div>
 
 				<footer className="bg-bg flex h-[45px] w-full items-center justify-between">
