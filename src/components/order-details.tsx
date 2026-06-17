@@ -1,6 +1,7 @@
 import { statusMap } from '@/constants/status-map'
 import type { Order } from '@/api/get-all-orders'
 import { useOrder } from '@/hooks/useOrder'
+import { useActiveSectionStore } from '@/stores/active-section'
 
 interface OrderDetailsProps {
 	orders: Order[]
@@ -8,6 +9,8 @@ interface OrderDetailsProps {
 
 export default function OrderDetails({ orders }: OrderDetailsProps) {
 	const { order } = useOrder({ orders })
+	const activeSection = useActiveSectionStore((state) => state.activeSection)
+	const setActiveSection = useActiveSectionStore((state) => state.setActiveSection)
 
 	const pickupAddress = order?.destinations[0]?.address || ''
 	const status = statusMap[order?.status ?? 1] || statusMap[1]
@@ -38,7 +41,11 @@ export default function OrderDetails({ orders }: OrderDetailsProps) {
 				</header>
 
 				<div className="relative flex flex-col items-center justify-center before:absolute before:left-4 before:h-1/5 before:w-[1px] before:bg-gradient-to-b before:from-[#D9D9D9] before:to-[#0F1315]">
-					<div className="mb-[30px] flex w-full items-center">
+					<button
+						type="button"
+						onClick={() => setActiveSection('PICKUP')}
+						className={`mb-[30px] flex w-full items-center text-left ${activeSection === 'PICKUP' ? 'opacity-100' : 'opacity-50'}`}
+					>
 						<div className="bg-primary outline-primary mr-[20px] flex size-[32px] flex-grow items-center justify-center gap-2 rounded-full outline outline-offset-[4px]">
 							<img src="/truck-black-stroke.svg" alt="Truck" className="h-[17.6px] w-[26.5px]" />
 						</div>
@@ -51,9 +58,13 @@ export default function OrderDetails({ orders }: OrderDetailsProps) {
 								<span className={`text-txt h-[10px]`}>{status.label}</span>
 							</div>
 						</div>
-					</div>
+					</button>
 
-					<div className="flex w-full items-center">
+					<button
+						type="button"
+						onClick={() => setActiveSection('DROPOFF')}
+						className={`flex w-full items-center text-left ${activeSection === 'DROPOFF' ? 'opacity-100' : 'opacity-50'}`}
+					>
 						<div className="mr-[20px] flex size-[32px] flex-grow items-center justify-center gap-2 rounded-full outline outline-offset-[4px]">
 							<span className="border-margin-gray size-[26px] rounded-full border"></span>
 						</div>
@@ -66,7 +77,7 @@ export default function OrderDetails({ orders }: OrderDetailsProps) {
 								<span className={`text-txt h-[10px]`}>{status.label}</span>
 							</div>
 						</div>
-					</div>
+					</button>
 				</div>
 			</div>
 		</div>
