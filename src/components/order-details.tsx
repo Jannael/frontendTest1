@@ -1,7 +1,6 @@
-import { statusMap } from '@/constants/status-map'
 import type { Order } from '@/api/get-all-orders'
 import { useOrder } from '@/hooks/useOrder'
-import { useActiveSectionStore } from '@/stores/active-section'
+import DetailsRouteItem from './details-route-item'
 
 interface OrderDetailsProps {
 	orders: Order[]
@@ -9,12 +8,6 @@ interface OrderDetailsProps {
 
 export default function OrderDetails({ orders }: OrderDetailsProps) {
 	const { order } = useOrder({ orders })
-	const activeSection = useActiveSectionStore((state) => state.activeSection)
-	const setActiveSection = useActiveSectionStore((state) => state.setActiveSection)
-
-	const pickupAddress = order?.destinations[0]?.address || ''
-	const status = statusMap[order?.status ?? 1] || statusMap[1]
-	const dropoffAddress = order?.destinations[order?.destinations.length - 1]?.address || ''
 
 	if (orders.length === 0) {
 		return (
@@ -32,6 +25,9 @@ export default function OrderDetails({ orders }: OrderDetailsProps) {
 		)
 	}
 
+	const pickupAddress = order.destinations[0]?.address || ''
+	const dropoffAddress = order.destinations[order.destinations.length - 1]?.address || ''
+
 	return (
 		<div className="bg-bg conic-border mt-[20px] ml-[34px] flex w-full items-start justify-start rounded-[20px]">
 			<div className="flex flex-col py-[24px] pl-[42px]">
@@ -41,43 +37,8 @@ export default function OrderDetails({ orders }: OrderDetailsProps) {
 				</header>
 
 				<div className="relative flex flex-col items-center justify-center before:absolute before:left-4 before:h-1/5 before:w-[1px] before:bg-gradient-to-b before:from-[#D9D9D9] before:to-[#0F1315]">
-					<button
-						type="button"
-						onClick={() => setActiveSection('PICKUP')}
-						className={`mb-[30px] flex w-full items-center text-left ${activeSection === 'PICKUP' ? 'opacity-100' : 'opacity-50'}`}
-					>
-						<div className="bg-primary outline-primary mr-[20px] flex size-[32px] flex-grow items-center justify-center gap-2 rounded-full outline outline-offset-[4px]">
-							<img src="/truck-black-stroke.svg" alt="Truck" className="h-[17.6px] w-[26.5px]" />
-						</div>
-						<div className="flex max-w-[215px] min-w-0 flex-grow flex-col gap-[2px] px-3">
-							<span className="text-txt-tertiary text-[8px] font-semibold">PICKUP</span>
-							<span className="text-txt text-[15.5px] font-semibold">{order.route.pickup}</span>
-							<span className="text-reference w-full truncate text-[12.5px] font-medium">{pickupAddress}</span>
-							<div className="flex h-[10px] items-center gap-2 text-[10px]">
-								<span className={`${status.color} h-[10px] w-[10px] rounded-full`} />
-								<span className={`text-txt h-[10px]`}>{status.label}</span>
-							</div>
-						</div>
-					</button>
-
-					<button
-						type="button"
-						onClick={() => setActiveSection('DROPOFF')}
-						className={`flex w-full items-center text-left ${activeSection === 'DROPOFF' ? 'opacity-100' : 'opacity-50'}`}
-					>
-						<div className="mr-[20px] flex size-[32px] flex-grow items-center justify-center gap-2 rounded-full outline outline-offset-[4px]">
-							<span className="border-margin-gray size-[26px] rounded-full border"></span>
-						</div>
-						<div className="flex max-w-[215px] min-w-0 flex-grow flex-col gap-[2px] px-3">
-							<span className="text-txt-tertiary text-[8px] font-semibold">DROPOFF</span>
-							<span className="text-txt text-[15.5px] font-semibold">{order.route.dropoff}</span>
-							<span className="text-reference w-full truncate text-[12.5px] font-medium">{dropoffAddress}</span>
-							<div className="flex h-[10px] items-center gap-2 text-[10px]">
-								<span className={`${status.color} h-[10px] w-[10px] rounded-full`} />
-								<span className={`text-txt h-[10px]`}>{status.label}</span>
-							</div>
-						</div>
-					</button>
+					<DetailsRouteItem label="PICKUP" order={order} address={pickupAddress} />
+					<DetailsRouteItem label="DROPOFF" order={order} address={dropoffAddress} />
 				</div>
 			</div>
 		</div>
