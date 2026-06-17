@@ -27,6 +27,7 @@ function formatTime(timestamp: number): string {
 export default function Order({ order }: { order: Order }) {
 	const status = statusMap[order.status] || statusMap[1]
 	const pickupAddress = order.destinations[0]?.address || ''
+	const dropoffAddress = order.destinations[order.destinations.length - 1]?.address || ''
 
 	return (
 		<li key={order.id} className="bg-bg-secondary bg-bg rounded-lg p-4 px-[50px]">
@@ -64,16 +65,16 @@ export default function Order({ order }: { order: Order }) {
 
 					<div className="flex w-full items-center">
 						<div className="flex size-20 flex-grow items-center gap-2">
-							<img src="/location.svg" alt="Truck" className="h-[17.6px] w-[26.5px]" />
+							<img src="/location.svg" alt="Location" className="h-[17.6px] w-[26.5px]" />
 						</div>
 						<div className="flex min-w-0 flex-grow flex-col gap-[2px] px-3">
-							<span className="text-txt-tertiary text-[8px] font-semibold">PICKUP</span>
-							<span className="text-txt text-[15.5px] font-semibold">{order.route.pickup}</span>
-							<span className="text-reference truncate text-[12.5px] font-medium">{pickupAddress}</span>
+							<span className="text-txt-tertiary text-[8px] font-semibold">DROPOFF</span>
+							<span className="text-txt text-[15.5px] font-semibold">{order.route.dropoff}</span>
+							<span className="text-reference truncate text-[12.5px] font-medium">{dropoffAddress}</span>
 						</div>
 						<div className="flex flex-grow flex-col justify-end gap-[2px] pl-10 text-right">
-							<span className="text-txt-tertiary text-[10.5px] font-semibold">{formatDate(order.route.startDate)}</span>
-							<span className="text-txt text-[12px] font-medium">{formatTime(order.route.startDate)}</span>
+							<span className="text-txt-tertiary text-[10.5px] font-semibold">{formatDate(order.route.endDate)}</span>
+							<span className="text-txt text-[12px] font-medium">{formatTime(order.route.endDate)}</span>
 						</div>
 					</div>
 				</div>
