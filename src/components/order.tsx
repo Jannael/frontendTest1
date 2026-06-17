@@ -45,7 +45,7 @@ export default function Order({ order }: { order: Order }) {
 					</div>
 
 					<div className="flex w-full items-center">
-						<div className="flex size-20 flex-grow items-center gap-2">
+						<div className="flex size-20 flex-grow items-center gap-2 lg:size-5">
 							<img src="/location.svg" alt="Location" className="h-[17.6px] w-[26.5px]" />
 						</div>
 						<div className="flex min-w-0 flex-grow flex-col gap-[2px] px-3">
