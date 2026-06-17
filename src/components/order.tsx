@@ -46,7 +46,7 @@ export default function Order({ order }: { order: Order }) {
 					</div>
 				</header>
 
-				<div className="bg-bg flex flex-grow items-center justify-center rounded-b-[20px] p-4 px-[20px]">
+				<div className="bg-bg flex flex-grow flex-col items-center justify-center p-4 px-[20px]">
 					<div className="flex w-full items-center">
 						<div className="flex size-20 flex-grow items-center gap-2">
 							<img src="/truck-white-stroke.svg" alt="Truck" className="h-[17.6px] w-[26.5px]" />
@@ -61,7 +61,24 @@ export default function Order({ order }: { order: Order }) {
 							<span className="text-txt text-[12px] font-medium">{formatTime(order.route.startDate)}</span>
 						</div>
 					</div>
+
+					<div className="flex w-full items-center">
+						<div className="flex size-20 flex-grow items-center gap-2">
+							<img src="/location.svg" alt="Truck" className="h-[17.6px] w-[26.5px]" />
+						</div>
+						<div className="flex min-w-0 flex-grow flex-col gap-[2px] px-3">
+							<span className="text-txt-tertiary text-[8px] font-semibold">PICKUP</span>
+							<span className="text-txt text-[15.5px] font-semibold">{order.route.pickup}</span>
+							<span className="text-reference truncate text-[12.5px] font-medium">{pickupAddress}</span>
+						</div>
+						<div className="flex flex-grow flex-col justify-end gap-[2px] pl-10 text-right">
+							<span className="text-txt-tertiary text-[10.5px] font-semibold">{formatDate(order.route.startDate)}</span>
+							<span className="text-txt text-[12px] font-medium">{formatTime(order.route.startDate)}</span>
+						</div>
+					</div>
 				</div>
+
+				<footer className="bg-primary h-[45px] rounded-br-[16px] rounded-bl-[19px]"></footer>
 			</article>
 		</li>
 	)
