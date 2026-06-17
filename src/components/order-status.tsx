@@ -6,14 +6,16 @@ interface OrderStatusProps {
 }
 
 export default function OrderStatus({ startDate }: OrderStatusProps) {
-	const [timeRemaining, setTimeRemaining] = useState(0)
-	const [isEnabled, setIsEnabled] = useState(false)
+	const [timeRemaining, setTimeRemaining] = useState(() => Math.max(0, startDate * 1000 - Date.now()))
+	const [isEnabled, setIsEnabled] = useState(() => startDate * 1000 - Date.now() <= 0)
 
 	const calculateRemaining = useCallback(() => {
 		return Math.max(0, startDate * 1000 - Date.now())
 	}, [startDate])
 
 	useEffect(() => {
+		if (isEnabled) return
+
 		const interval = setInterval(() => {
 			const remaining = calculateRemaining()
 			setTimeRemaining(remaining)
@@ -25,7 +27,7 @@ export default function OrderStatus({ startDate }: OrderStatusProps) {
 		}, 1000)
 
 		return () => clearInterval(interval)
-	}, [calculateRemaining])
+	}, [calculateRemaining, isEnabled])
 
 	const handleClick = () => {
 		console.log('navegar')
