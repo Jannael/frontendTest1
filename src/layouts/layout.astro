@@ -48,7 +48,7 @@ const structuredData = {
 ---
 
 <!doctype html>
-<html lang="en" class="dark">
+<html lang="en" class="min-h-screen w-screen overflow-x-hidden">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -76,7 +76,7 @@ const structuredData = {
 		<script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
 	</head>
 	<body class="font-avenir bg-bg m-auto w-screen max-w-4xl overflow-x-hidden">
-		<main>
+		<main class="min-h-screen w-screen pt-[65px]">
 			<slot />
 		</main>
 	</body>
