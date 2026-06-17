@@ -29,7 +29,18 @@ export default function Order({ order }: { order: Order }) {
 					</div>
 				</header>
 
-				<div className="bg-bg flex-grow rounded-b-[20px]"></div>
+				<div className="bg-bg flex flex-grow items-center justify-center rounded-b-[20px] p-4">
+					<div className="flex w-full items-center">
+						<div className="flex items-center gap-2 pr-[20px]">
+							<img src="/truck-white-stroke.svg" alt="Truck" className="h-[17.6px] w-[26.5px]" />
+						</div>
+						<div className="flex flex-col gap-[2px]">
+							<span className="text-txt-tertiary text-[8px] font-semibold">PICKUP</span>
+							<span className="text-txt text-[15.5px] font-semibold">New York</span>
+							<span className="text-reference text-[12.5px] font-medium">25 Mortada street, Gainalkes..</span>
+						</div>
+					</div>
+				</div>
 			</article>
 		</li>
 	)
