@@ -1,6 +1,6 @@
 import type { Order } from '@/api/get-all-orders'
-import OrderStatus from './order-status'
-import RouteItem from './route-item'
+import OrderStatus from '@/components/order-status'
+import RouteItem from '@/components/route-item'
 import { statusMap } from '@/constants/status-map'
 
 export default function Order({ order }: { order: Order }) {
