@@ -18,6 +18,6 @@ const navbarItems = [
 <Layout title="Home">
 	<Header title="Cargo Orders" returnUrl="/" />
 	<Navbar items={navbarItems} />
-	<Search client:load />
-	<OrderList orders={orders} client:load />
+	<Search client:only="react" />
+	<OrderList orders={orders} client:only="react" />
 </Layout>
