@@ -15,8 +15,8 @@ export default function Order({ order }: { order: Order }) {
 				{order.orderNumber && <span className="font-inter text-txt ml-2 text-[17.3px] font-semibold">#{order.orderNumber}</span>}
 			</header>
 
-			<article className="conic-border bg-bg z-1 flex h-[290px] w-full flex-col rounded-[20px]">
-				<header className="bg-bg border-border-gray flex w-full items-center justify-between rounded-t-[20px] border-b px-[20px] py-[15px]">
+			<article className="conic-border contrast-bg z-1 flex h-[290px] w-full flex-col rounded-[20px]">
+				<header className="border-border-gray flex w-full items-center justify-between rounded-t-[20px] border-b px-[20px] py-[15px]">
 					<div className="flex items-center gap-2">
 						<img src="/FCL.svg" alt="FCL" className="h-[15px] w-[26.5px]" />
 						<span className="text-txt text-[15.5px] font-extrabold">FCL</span>
@@ -27,7 +27,7 @@ export default function Order({ order }: { order: Order }) {
 					</div>
 				</header>
 
-				<div className="bg-bg relative flex w-full flex-grow flex-col items-center justify-center p-4 px-[20px] before:absolute before:left-8 before:h-1/5 before:w-[1px] before:bg-gradient-to-b before:from-[#D9D9D9] before:to-[#0F1315]">
+				<div className="relative flex w-full flex-grow flex-col items-center justify-center p-4 px-[20px] before:absolute before:left-8 before:h-1/5 before:w-[1px] before:bg-gradient-to-b before:from-[#D9D9D9] before:to-[#0F1315]">
 					<RouteItem
 						label="PICKUP"
 						icon="/truck-white-stroke.svg"
@@ -46,7 +46,7 @@ export default function Order({ order }: { order: Order }) {
 					/>
 				</div>
 
-				<footer className="bg-bg flex h-[45px] w-full items-center justify-between">
+				<footer className="flex h-[45px] w-full items-center justify-between">
 					{/* <OrderStatus startDate={order.startDate} /> the time that comes from the order says 10000 years that{s why i commented it, but it works fine it{s just that also i don{t have the exact styles to show the hour }}} */}
 					<OrderStatus startDate={0} />
 					<a
