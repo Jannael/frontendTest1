@@ -59,6 +59,7 @@
 }
 
 .conic-border {
+	background: linear-gradient(to top right, var(--color-bg), #55555515, var(--color-bg));
 	position: relative;
 }
 
@@ -70,6 +71,7 @@
 	width: calc(100% + 1.5px);
 	height: calc(100% + 1.5px);
 	border-radius: inherit;
+	padding: 0.75px;
 	background: conic-gradient(
 		var(--color-margin-white),
 		var(--color-margin-gray),
@@ -83,7 +85,12 @@
 		var(--color-margin-gray),
 		var(--color-margin-white)
 	);
-	z-index: -1;
+	-webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+	-webkit-mask-composite: xor;
+	mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+	mask-composite: exclude;
+	z-index: 1;
+	pointer-events: none;
 }
 
 button:not(:disabled) {
