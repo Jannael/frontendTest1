@@ -24,16 +24,14 @@ export default function OrderInfo({ orders }: { orders: Order[] }) {
 
 	return (
 		<section className="m-[34px] flex w-auto flex-col items-start justify-center rounded-[20px]">
-			<div className="flex h-[72px] w-full items-center justify-center rounded-[20px] bg-gradient-to-b from-[#3a3a3a] to-[#1a1a1a] p-[1px]">
-				<button
-					type="button"
-					onClick={() => setIsOpen(!isOpen)}
-					className="bg-bg flex h-full w-full items-center justify-between rounded-[20px] px-[22px]"
-				>
-					<h2 className="text-txt font-inter text-[15.2px] font-semibold">{title}</h2>
-					<img src="/drop-menu-icon.svg" className={`text-primary h-[14px] w-[9px] transition-transform ${isOpen ? '' : 'rotate-180'}`} />
-				</button>
-			</div>
+			<button
+				type="button"
+				onClick={() => setIsOpen(!isOpen)}
+				className="conic-border flex h-[72px] w-full items-center justify-between rounded-[20px] px-[22px]"
+			>
+				<h2 className="text-txt font-inter text-[15.2px] font-semibold">{title}</h2>
+				<img src="/drop-menu-icon.svg" className={`text-primary h-[14px] w-[9px] transition-transform ${isOpen ? '' : 'rotate-180'}`} />
+			</button>
 
 			{isOpen && (
 				<div className="mt-4 flex w-full flex-col gap-4 px-4">
